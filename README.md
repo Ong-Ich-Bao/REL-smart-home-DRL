@@ -15,7 +15,8 @@ Code gốc: [sensorlab/smart-home-energy-trading-with-DRL](https://github.com/se
 | [TIEN_DO.md](TIEN_DO.md) | Bảng việc: ai làm gì, đang tới đâu — **cập nhật mỗi khi xong việc** |
 | [HUONG_DAN.md](HUONG_DAN.md) | Hướng dẫn hiểu bài báo + code, bản đồ bài báo ↔ code, các chỗ code lệch bài báo, checklist chạy |
 | [ket_qua/ket_qua.md](ket_qua/ket_qua.md) | Kết quả chạy lại: số liệu chính xác của Fig. 3/4 bài báo, model gốc, 12 lần train lại, phân tích |
-| `ket_qua/run_train.py` | Script train 200 episode → lưu → test → vẽ biểu đồ (có seed để tái lập) |
+| `ket_qua/run_train.py` | Script train 200 episode → lưu → test → vẽ biểu đồ (có seed để tái lập; tuỳ chọn pin, hiệu suất, file giá) |
+| `ket_qua/run_test.py` | Test lại cả năm một model đã lưu |
 | `ket_qua/diagnose.py` | Kiểm tra model: số nơ-ron còn sống, action chọn |
 | `smart-home-energy-trading-with-DRL/` | Code gốc của tác giả, **chỉ sửa 2 dòng** `torch.load` (xem commit thứ 2) |
 

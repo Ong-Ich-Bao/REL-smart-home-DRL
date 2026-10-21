@@ -1,0 +1,14 @@
+False
+cpu
+YOU HAVE INITIALISED YOUR HEMS (Home Energy Management System) WITH FOLLOWING SPECIFICATIONS:
+Battery size: 20 kWh
+Max input/output energy per step: 1.5 kWh
+Battery efficiency: 95%
+Energy selling price is set to 0.5 * dataset market price
+Energy buying price is set to 2 * dataset market price
+Dataset was loaded from: saved_nets/run_6kw_s5
+PROPERTIES battery 20 max_en 1.5 eff 0.95 price_coefs [2, 0.5] SMP levels 8284 epsilon 0.017587946605721515
+--- TESTING ---
+Episode:Testing episode: saved_nets/run_6kw_s5 | Epsilon: 0.02 | DQN cost:-1260.58 | compare cost:-1127.32 | Gain over compare: -133.25( -11.82% )
+TEST_SECONDS 56.6
+RAW results [sRL, baseline1_alt, baseline2_nobatt, no_pv_no_batt]: [-1260.5755475436686, -1127.322764971808, -1250.8387008943394, 1973.542247472384]

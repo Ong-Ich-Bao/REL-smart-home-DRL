@@ -150,7 +150,7 @@ Ngoài ra code còn vẽ thêm đường **"no PV, no battery cost"**: chi phí 
 6. Pin còn dư ở bước cuối được quy ra tiền theo **SMP × 1** (không phải giá bán). Phép quy đổi này chỉ áp dụng cho DQN và chiến lược xoay vòng.
 7. Tên thư mục model có sẵn `rtp_20_10_90_2_2` không khớp cấu hình thật. Cấu hình thật trong `properties.json`: pin 20 kWh, `max_en=1` (≈4 kW), hiệu suất 95%, giá `[2, 0.5]`.
 8. Bài báo không ghi các siêu tham số DQN, chỉ code mới có (mục 3.4).
-9. Không seed torch, nên kết quả train dao động mạnh. README gốc thừa nhận có thể phải train lại **hơn 10 lần** mới được model tốt. Đã kiểm chứng: 12 run → chỉ 2 run thắng baseline; nguyên nhân là **dying ReLU** (8 nơ-ron lớp 1 chết hết → mạng trả hằng số → luôn xả pin). Chi tiết ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md) mục 3.
+9. Không seed torch, nên kết quả train dao động mạnh. README gốc thừa nhận có thể phải train lại **hơn 10 lần** mới được model tốt. Đã kiểm chứng: 48 run trên 9 cấu hình → chỉ 12 run (25%) học được; nguyên nhân là **dying ReLU** (8 nơ-ron lớp 1 chết hết → mạng trả hằng số → luôn xả pin). Chi tiết ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md) mục 3–7.
 10. **R1 (công thức 11):** công thức in trong bài có vẻ bị **đảo** — biểu thức chứa α (ngưỡng dưới) lại gán cho điều kiện "pin > βB" và ngược lại. Code (`battery_penalty_expand`, với x = E_b/B):
     - x < α: −2(1 − x/α)² (pin cạn → phạt tối đa −2)
     - x > β: −16((x − β)/(1 − β))² (pin đầy → phạt tối đa −16; bài ghi hệ số −4 hoặc −2)
@@ -166,7 +166,7 @@ Mọi lệnh đều chạy trong **terminal của VS Code** (PowerShell).
 - **Mỗi khối lệnh: copy cả khối**, dán vào terminal rồi Enter.
 - Dòng đầu luôn là `cd` vào thư mục code. Nếu bỏ dòng này, code báo `FileNotFoundError: data/rtp.csv` hoặc `No module named 'env'`.
 
-> **Tiến độ (05/10/2026):** Bước 1–6 ✅ đã chạy xong (12 run train). Kết quả + số liệu chính xác của Fig. 3/4 bài báo ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md). Còn lại: Bước 7 (tuỳ chọn), Bước 8 (báo cáo).
+> **Tiến độ (21/10/2026):** Bước 1–7 ✅ đã chạy xong (48 run train, đủ mọi cột Fig. 3/4 với 6 kW). Kết quả + số liệu chính xác của Fig. 3/4 bài báo ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md), bảng tổng hợp ở mục 4. Còn lại: Bước 8 (báo cáo).
 >
 > **Mẹo lưu biểu đồ mà không sửa code:** thêm `$env:MPLBACKEND = "Agg"` trước lệnh, và nối `; import matplotlib.pyplot as plt; plt.savefig('../ket_qua/ten.png')` vào cuối chuỗi `python -c`.
 
@@ -251,13 +251,19 @@ python ../ket_qua/run_train.py run_4kw_3 1
 - Kết quả dao động mạnh giữa các lần chạy, xem Phần 4 mục 9.
 - Nên chạy **vài lần** (run1, run2, run3…) và ghi lại mọi kết quả, kể cả lần kém.
 
-### ☐ Bước 7 (tuỳ chọn, để báo cáo có thêm điểm)
+### ☑ Bước 7 (tuỳ chọn, để báo cáo có thêm điểm)
 
-- **Thử giá TOU:** thêm `data_path='data/tou2.csv'` vào `HEMS(...)` rồi so với hình 4 của bài báo.
-- **Thử cấu hình pin khác như bài báo:**
-  - `battery=10` hoặc `battery=20`,
-  - `max_en=1` hoặc `max_en=1.5`,
-  - `eff=0.8`, `0.9` hoặc `0.95`.
+`run_train.py` nhận thêm 3 tham số tuỳ chọn ở cuối: dung lượng pin, hiệu suất, file giá (mặc định `20 0.95 data/rtp.csv`, nên các lệnh cũ vẫn chạy như trước):
+
+```powershell
+cd smart-home-energy-trading-with-DRL   # chạy từ thư mục gốc của repo
+python ../ket_qua/run_train.py tou_6kw_s1 1.5 1 20 0.95 data/tou2.csv     # giá TOU, so với hình 4
+python ../ket_qua/run_train.py b10e95_6kw_s3 1.5 3 10 0.95 data/rtp.csv   # pin 10 kWh, so với hình 3
+```
+
+Muốn test lại một model đã lưu (không train): `python ../ket_qua/run_test.py <tên>`. Lệnh này nạp `params.json` ~95 MB, mỗi tiến trình tốn vài GB RAM ⇒ chỉ chạy **tối đa 3 cái cùng lúc** (12 cái cùng lúc trên máy 16 GB bị `MemoryError`).
+
+Đã chạy: TOU 4/6 kW và 5 cấu hình pin còn lại của hình 3 (6 kW), mỗi cấu hình seed 1–4. Kết quả ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md) mục 4–7.
 
 ### ☐ Bước 8: Viết báo cáo, gồm:
 

@@ -1,0 +1,17 @@
+False
+cpu
+TORCH_SEED 2
+YOU HAVE INITIALISED YOUR HEMS (Home Energy Management System) WITH FOLLOWING SPECIFICATIONS:
+Battery size: 20 kWh
+Max input/output energy per step: 1.5 kWh
+Battery efficiency: 80%
+Energy selling price is set to 0.5 * dataset market price
+Energy buying price is set to 2 * dataset market price
+Dataset was loaded from: data/rtp.csv
+Trainig in progress...
+TRAIN_SECONDS 589.4 epsilon 0.017587946605721515
+model saved to location: saved_nets/b20e80_6kw_s2
+--- TESTING ---
+Episode:testing episode | Epsilon: 0.02 | DQN cost:-1082.83 | compare cost:-1411.59 | Gain over compare: 328.76( 23.29% )
+TEST_SECONDS 67.0
+RAW results [sRL, baseline1_alt, baseline2_nobatt, no_pv_no_batt]: [-1082.8260346544605, -1411.5900603483765, -1250.8387008943394, 1973.542247472384]

@@ -14,9 +14,9 @@ Muốn nhận việc: điền tên vào cột **Người làm**, đổi ⬜ → 
 | 4 | Lấy số liệu chính xác Fig. 3/4 trong bài báo | Bảo | ✅ | [ket_qua.md](ket_qua/ket_qua.md) mục 2 |
 | 5 | Train lại 12 lần (4 kW, 6 kW) + chẩn đoán | Bảo | ✅ | Chỉ 2/12 run thắng baseline, nguyên nhân dying ReLU — [ket_qua.md](ket_qua/ket_qua.md) mục 3 |
 | 6 | Đọc hiểu bài báo + code, ghi chỗ lệch | Bảo | ✅ | [HUONG_DAN.md](HUONG_DAN.md) Phần 3–4 |
-| 7 | Train thêm seed 5–12 cho cấu hình 6 kW, tìm run gần 730 € | | ⬜ | `python ../ket_qua/run_train.py run_6kw_s5 1.5 5` |
-| 8 | Chạy giá TOU (`data/tou2.csv`), so với Fig. 4 | | ⬜ | Cần thêm tham số `data_path` vào `run_train.py` |
-| 9 | Chạy cấu hình pin khác (10 kWh; hiệu suất 80%, 90%) | | ⬜ | So với các cột còn lại của Fig. 3 |
+| 7 | Train thêm seed 5–12 cho cấu hình 6 kW, tìm run gần 730 € | Bảo | ✅ | Tốt nhất seed 8 = 980.60 €, chưa tới 730 — [ket_qua.md](ket_qua/ket_qua.md) mục 4–5 |
+| 8 | Chạy giá TOU (`data/tou2.csv`), so với Fig. 4 | Bảo | ✅ | 6 kW seed 1 = 917 € (bài báo 894) — [ket_qua.md](ket_qua/ket_qua.md) mục 4–5 |
+| 9 | Chạy cấu hình pin khác (10 kWh; hiệu suất 80%, 90%) | Bảo | ✅ | Đủ 5 cột còn lại của Fig. 3; 10 kWh/95% = 781 € (bài 766), 20 kWh/80% = 1078 € (bài 1037) — [ket_qua.md](ket_qua/ket_qua.md) mục 4–7 |
 | 10 | Báo cáo — phần giới thiệu bài toán + mô hình MDP (state/action/reward) | | ⬜ | Nguồn: HUONG_DAN Phần 1–3 |
 | 11 | Báo cáo — phần kết quả: bảng bài báo vs chạy lại, biểu đồ | | ⬜ | Nguồn: ket_qua.md, `ket_qua/*.png` |
 | 12 | Báo cáo — phần phân tích: chỗ lệch code/bài báo, dying ReLU | | ⬜ | Nguồn: HUONG_DAN Phần 4, ket_qua mục 3 |
@@ -29,6 +29,7 @@ Thêm việc mới: thêm dòng vào cuối bảng.
 
 Ghi mới nhất lên trên, mỗi lần 1 dòng.
 
+- **21/10/2026 — Bảo:** Hoàn thành việc 7–9 (36 run mới). Mọi baseline khớp bài báo < 1 €; 3 cấu hình đạt gần số bài báo (lệch 2–4%); train thành công 12/48 run. Kết quả trùng từng chữ số với bản chạy độc lập của một bạn trong nhóm.
 - **05/10/2026 — Bảo:** Hoàn thành việc 1–6, đưa repo lên GitHub.
 
 ## Cách cập nhật file này (git cơ bản)

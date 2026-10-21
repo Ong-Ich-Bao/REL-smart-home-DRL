@@ -1,0 +1,36 @@
+saved_nets/b10e80_6kw_s1	fc1_alive=0/8	greedy_actions={3: 3000}
+saved_nets/b10e80_6kw_s2	fc1_alive=0/8	greedy_actions={3: 3000}
+saved_nets/b10e80_6kw_s3	fc1_alive=0/8	greedy_actions={3: 3000}
+saved_nets/b10e80_6kw_s4	fc1_alive=2/8	greedy_actions={0: 400, 1: 60, 2: 1773, 3: 767}
+saved_nets/b10e90_6kw_s1	fc1_alive=1/8	greedy_actions={1: 3000}
+saved_nets/b10e90_6kw_s2	fc1_alive=0/8	greedy_actions={1: 3000}
+saved_nets/b10e90_6kw_s3	fc1_alive=1/8	greedy_actions={1: 3000}
+saved_nets/b10e90_6kw_s4	fc1_alive=0/8	greedy_actions={1: 3000}
+saved_nets/b10e95_6kw_s1	fc1_alive=2/8	greedy_actions={1: 537, 2: 2034, 3: 429}
+saved_nets/b10e95_6kw_s2	fc1_alive=1/8	greedy_actions={1: 978, 3: 2022}
+saved_nets/b10e95_6kw_s3	fc1_alive=2/8	greedy_actions={0: 504, 1: 2324, 2: 172}
+saved_nets/b10e95_6kw_s4	fc1_alive=1/8	greedy_actions={1: 2264, 2: 730, 3: 6}
+saved_nets/b20e80_6kw_s1	fc1_alive=0/8	greedy_actions={3: 3000}
+saved_nets/b20e80_6kw_s2	fc1_alive=1/8	greedy_actions={0: 56, 1: 742, 2: 2202}
+saved_nets/b20e80_6kw_s3	fc1_alive=2/8	greedy_actions={0: 3, 1: 562, 2: 2435}
+saved_nets/b20e80_6kw_s4	fc1_alive=1/8	greedy_actions={1: 3000}
+saved_nets/b20e90_6kw_s1	fc1_alive=0/8	greedy_actions={3: 3000}
+saved_nets/b20e90_6kw_s2	fc1_alive=1/8	greedy_actions={1: 276, 3: 2724}
+saved_nets/b20e90_6kw_s3	fc1_alive=1/8	greedy_actions={1: 1272, 2: 777, 3: 951}
+saved_nets/b20e90_6kw_s4	fc1_alive=0/8	greedy_actions={1: 3000}
+saved_nets/run_6kw_s10	fc1_alive=0/8	greedy_actions={3: 3000}
+saved_nets/run_6kw_s11	fc1_alive=1/8	greedy_actions={1: 40, 2: 2440, 3: 520}
+saved_nets/run_6kw_s12	fc1_alive=1/8	greedy_actions={1: 2159, 3: 841}
+saved_nets/run_6kw_s5	fc1_alive=1/8	greedy_actions={0: 387, 3: 2613}
+saved_nets/run_6kw_s6	fc1_alive=2/8	greedy_actions={1: 1869, 3: 1131}
+saved_nets/run_6kw_s7	fc1_alive=0/8	greedy_actions={1: 3000}
+saved_nets/run_6kw_s8	fc1_alive=2/8	greedy_actions={0: 171, 1: 985, 2: 1844}
+saved_nets/run_6kw_s9	fc1_alive=0/8	greedy_actions={1: 3000}
+saved_nets/tou_4kw_s1	fc1_alive=0/8	greedy_actions={3: 3000}
+saved_nets/tou_4kw_s2	fc1_alive=2/8	greedy_actions={0: 347, 1: 1223, 2: 1430}
+saved_nets/tou_4kw_s3	fc1_alive=0/8	greedy_actions={1: 3000}
+saved_nets/tou_4kw_s4	fc1_alive=2/8	greedy_actions={0: 14, 1: 74, 2: 1611, 3: 1301}
+saved_nets/tou_6kw_s1	fc1_alive=1/8	greedy_actions={0: 548, 1: 2452}
+saved_nets/tou_6kw_s2	fc1_alive=2/8	greedy_actions={1: 690, 2: 229, 3: 2081}
+saved_nets/tou_6kw_s3	fc1_alive=0/8	greedy_actions={3: 3000}
+saved_nets/tou_6kw_s4	fc1_alive=0/8	greedy_actions={3: 3000}
