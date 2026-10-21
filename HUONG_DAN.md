@@ -265,7 +265,7 @@ Muốn test lại một model đã lưu (không train): `python ../ket_qua/run_t
 
 Đã chạy: TOU 4/6 kW và 5 cấu hình pin còn lại của hình 3 (6 kW), mỗi cấu hình seed 1–4. Kết quả ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md) mục 4–7.
 
-### ☑ Bước 8: Viết báo cáo (đã có bản nháp đủ mục, slide 12 trang và [VAN_DAP.md](VAN_DAP.md)), gồm:
+### ☑ Bước 8: Viết báo cáo (đã có bản nháp đủ mục, slide 12 trang, kịch bản thuyết trình và đáp án vấn đáp; Bảo gửi trong nhóm), gồm:
 
 1. Tóm tắt bài toán (Phần 1).
 2. Mô hình MDP: state/action/reward (Phần 3).

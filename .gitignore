@@ -3,6 +3,10 @@ CLAUDE.md
 CLAUDE.local.md
 .claude/
 
+# Tài liệu thuyết trình riêng của nhóm — giữ trên máy, không đưa lên repo công khai
+KICH_BAN_THUYET_TRINH.md
+VAN_DAP.md
+
 # Bài báo (bản quyền ACM) — tải qua DOI trong README
 *.pdf
 

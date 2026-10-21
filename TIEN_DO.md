@@ -21,8 +21,8 @@ Muốn nhận việc: điền tên vào cột **Người làm**, đổi ⬜ → 
 | 11 | Báo cáo — phần kết quả: bảng bài báo vs chạy lại, biểu đồ | Bảo | ✅ | Trong báo cáo, mục 5 |
 | 12 | Báo cáo — phần phân tích: chỗ lệch code/bài báo, dying ReLU | Bảo | ✅ | Trong báo cáo, mục 6–7 |
 | 13 | Slide thuyết trình | Bảo | ✅ | 12 slide trên Claude (xuất được PPTX/PDF) — Bảo gửi link; cần điền tên thành viên ở slide bìa |
-| 14 | Chuẩn bị câu hỏi vấn đáp | Bảo | ✅ | [VAN_DAP.md](VAN_DAP.md): 18 câu kèm đáp án |
-| 15 | Đọc lại báo cáo + slide, tập thuyết trình | | ⬜ | Mỗi người đọc VAN_DAP.md |
+| 14 | Chuẩn bị câu hỏi vấn đáp | Bảo | ✅ | 18 câu kèm đáp án — Bảo gửi trong nhóm |
+| 15 | Đọc lại báo cáo + slide, tập thuyết trình | | ⬜ | Bảo gửi kịch bản thuyết trình + đáp án vấn đáp trong nhóm |
 
 Thêm việc mới: thêm dòng vào cuối bảng.
 
