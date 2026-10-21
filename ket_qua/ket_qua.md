@@ -63,7 +63,7 @@ Lưu ý: bài chỉ vẽ Baseline 2 với 6 kW, không có cột xoay vòng 4 kW
 | Xoay vòng | 1127 (6 kW) | 1176.15 (4 kW) | khác cấu hình, không so trực tiếp |
 
 - Baseline 1 khớp gần tuyệt đối ⇒ môi trường mô phỏng, dữ liệu và cách tính tiền **tái hiện đúng**.
-- DQN lệch +2.5%: hợp lý vì lúc test vẫn còn ε ≈ 0.018 ngẫu nhiên (chạy lại sẽ ra số lệch nhẹ), và không chắc đây đúng là model tác giả dùng để vẽ hình.
+- DQN lệch +2.5%: không chắc đây đúng là model tác giả dùng để vẽ hình, và tác giả có thể đã test bằng một chuỗi ngẫu nhiên khác (lúc test còn ε ≈ 0.018). Với code hiện tại, test là tất định: `Env.__init__` gọi `reset(0)` nên chạy lại luôn ra 1000.26.
 
 ## 3. Train lại từ đầu
 

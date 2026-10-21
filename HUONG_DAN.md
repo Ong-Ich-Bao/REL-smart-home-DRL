@@ -146,7 +146,7 @@ Ngoài ra code còn vẽ thêm đường **"no PV, no battery cost"**: chi phí 
 2. Tên baseline 1 và 2 bị đổi chỗ, xem mục 3.5.
 3. Giá bán mặc định trong code (`price_coefs=[2,1]`) khác bài báo (`[2, 0.5]`). Muốn train giống bài báo phải truyền `price_coefs=[2,0.5]`.
 4. **R2 (công thức 12):** bài báo chia cho dung lượng pin B và dùng **giá mua** (= 2×SMP); code **không chia B** và dùng **SMP gốc** ⇒ với B = 20, R2 trong code **lớn gấp 10 lần** công thức trong bài (2/20 = 1/10).
-5. Lúc test, agent vẫn còn ε ≈ 0.018, tức khoảng 2% số bước chọn **ngẫu nhiên**. Vì vậy chạy test 2 lần sẽ ra số hơi khác nhau.
+5. Lúc test, agent vẫn còn ε ≈ 0.018, tức khoảng 2% số bước chọn **ngẫu nhiên**. Tuy vậy kết quả test vẫn **tất định**: `Env.__init__` luôn gọi `reset(0)` (seed numpy = 0), và `test()` tạo env ngay trước khi chạy, nên chuỗi ngẫu nhiên lần nào cũng như nhau. Test một model bao nhiêu lần cũng ra đúng một con số.
 6. Pin còn dư ở bước cuối được quy ra tiền theo **SMP × 1** (không phải giá bán). Phép quy đổi này chỉ áp dụng cho DQN và chiến lược xoay vòng.
 7. Tên thư mục model có sẵn `rtp_20_10_90_2_2` không khớp cấu hình thật. Cấu hình thật trong `properties.json`: pin 20 kWh, `max_en=1` (≈4 kW), hiệu suất 95%, giá `[2, 0.5]`.
 8. Bài báo không ghi các siêu tham số DQN, chỉ code mới có (mục 3.4).
@@ -166,7 +166,7 @@ Mọi lệnh đều chạy trong **terminal của VS Code** (PowerShell).
 - **Mỗi khối lệnh: copy cả khối**, dán vào terminal rồi Enter.
 - Dòng đầu luôn là `cd` vào thư mục code. Nếu bỏ dòng này, code báo `FileNotFoundError: data/rtp.csv` hoặc `No module named 'env'`.
 
-> **Tiến độ (21/10/2026):** Bước 1–7 ✅ đã chạy xong (48 run train, đủ mọi cột Fig. 3/4 với 6 kW). Kết quả + số liệu chính xác của Fig. 3/4 bài báo ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md), bảng tổng hợp ở mục 4. Còn lại: Bước 8 (báo cáo).
+> **Tiến độ (21/10/2026):** Bước 1–8 ✅ (48 run train, đủ mọi cột Fig. 3/4 với 6 kW; báo cáo, slide, đáp án vấn đáp). Kết quả + số liệu chính xác của Fig. 3/4 bài báo ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md), bảng tổng hợp ở mục 4.
 >
 > **Mẹo lưu biểu đồ mà không sửa code:** thêm `$env:MPLBACKEND = "Agg"` trước lệnh, và nối `; import matplotlib.pyplot as plt; plt.savefig('../ket_qua/ten.png')` vào cuối chuỗi `python -c`.
 
@@ -265,7 +265,7 @@ Muốn test lại một model đã lưu (không train): `python ../ket_qua/run_t
 
 Đã chạy: TOU 4/6 kW và 5 cấu hình pin còn lại của hình 3 (6 kW), mỗi cấu hình seed 1–4. Kết quả ở [ket_qua/ket_qua.md](ket_qua/ket_qua.md) mục 4–7.
 
-### ☐ Bước 8: Viết báo cáo, gồm:
+### ☑ Bước 8: Viết báo cáo (đã có bản nháp đủ mục, slide 12 trang và [VAN_DAP.md](VAN_DAP.md)), gồm:
 
 1. Tóm tắt bài toán (Phần 1).
 2. Mô hình MDP: state/action/reward (Phần 3).

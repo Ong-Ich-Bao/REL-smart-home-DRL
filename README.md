@@ -14,6 +14,7 @@ Code gốc: [sensorlab/smart-home-energy-trading-with-DRL](https://github.com/se
 |---|---|
 | [TIEN_DO.md](TIEN_DO.md) | Bảng việc: ai làm gì, đang tới đâu — **cập nhật mỗi khi xong việc** |
 | [HUONG_DAN.md](HUONG_DAN.md) | Hướng dẫn hiểu bài báo + code, bản đồ bài báo ↔ code, các chỗ code lệch bài báo, checklist chạy |
+| [VAN_DAP.md](VAN_DAP.md) | 18 câu hỏi vấn đáp hay gặp kèm đáp án |
 | [ket_qua/ket_qua.md](ket_qua/ket_qua.md) | Kết quả chạy lại: số liệu chính xác của Fig. 3/4 bài báo, model gốc, 12 lần train lại, phân tích |
 | `ket_qua/run_train.py` | Script train 200 episode → lưu → test → vẽ biểu đồ (có seed để tái lập; tuỳ chọn pin, hiệu suất, file giá) |
 | `ket_qua/run_test.py` | Test lại cả năm một model đã lưu |
@@ -33,6 +34,6 @@ python -c "import HEMS; m=HEMS.HEMS(load=True, path='saved_nets/rtp_20_10_90_2_2
 python ../ket_qua/run_train.py run_6kw_s2 1.5 2
 ```
 
-Kết quả đúng của lệnh test: dòng cuối có `DQN cost:-89.89 | compare cost:-104.0` (± chút do agent còn 2% hành động ngẫu nhiên). Đọc số thế nào: xem [HUONG_DAN.md](HUONG_DAN.md) Phần 5, Bước 3.
+Kết quả đúng của lệnh test: dòng cuối có `DQN cost:-89.89 | compare cost:-104.0` (test tất định: chạy lại luôn ra đúng số này). Đọc số thế nào: xem [HUONG_DAN.md](HUONG_DAN.md) Phần 5, Bước 3.
 
 **Lưu ý:** model tự train (~90 MB mỗi cái) không đưa lên repo — chạy lại `run_train.py` với cùng seed sẽ ra đúng model đó. Bài báo (PDF) không đưa lên vì bản quyền — tải qua DOI ở trên.
