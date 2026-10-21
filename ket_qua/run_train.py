@@ -1,5 +1,5 @@
 # Train + save + full test one configuration; run from smart-home-energy-trading-with-DRL/
-# Usage: python ../ket_qua/run_train.py <name> <max_en> [torch_seed]
+# Usage: python ../ket_qua/run_train.py <name> <max_en> [torch_seed] [battery=20] [eff=0.95] [data_path=data/rtp.csv]
 # torch_seed only fixes the initial network weights (numpy is re-seeded inside env.reset by the original code).
 import os, sys, time
 sys.path.insert(0, os.getcwd())
@@ -10,11 +10,14 @@ import torch
 import HEMS
 
 name, max_en = sys.argv[1], float(sys.argv[2])
+battery = int(sys.argv[4]) if len(sys.argv) > 4 else 20
+eff = float(sys.argv[5]) if len(sys.argv) > 5 else 0.95
+data_path = sys.argv[6] if len(sys.argv) > 6 else "data/rtp.csv"
 torch.set_num_threads(1)  # tiny network; avoids CPU contention when several runs share the machine
 if len(sys.argv) > 3:
     torch.manual_seed(int(sys.argv[3]))
 print("TORCH_SEED", torch.initial_seed(), flush=True)
-m = HEMS.HEMS(battery=20, max_en=max_en, eff=0.95, price_coefs=[2, 0.5], data_path="data/rtp.csv")
+m = HEMS.HEMS(battery=battery, max_en=max_en, eff=eff, price_coefs=[2, 0.5], data_path=data_path)
 t = time.time()
 m.train()
 print("TRAIN_SECONDS", round(time.time() - t, 1), "epsilon", m.epsilon, flush=True)
